@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Login from './Login';
+import Register from './Register';
+import Allemp from './Allemp';
+import View1 from './View1';
+import Modemp from './Modemp';
+import Showemp from './Showemp';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <BrowserRouter>
+      <Routes>
+        <Route path='/Login' exact Component={Login}></Route>
+        <Route path='/Register' exact Component={Register}></Route>
+        <Route path='/empdata' exact Component={Allemp}></Route>
+        <Route path="/oneemp/:id" exact Component={View1}></Route>
+        <Route path="/modemp/:id" exact Component={Modemp}></Route>
+        <Route path='/show/:id' exact Component={Showemp}></Route>
+      </Routes>
+      </BrowserRouter>
+  
     </div>
   );
 }
