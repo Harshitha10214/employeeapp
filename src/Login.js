@@ -9,7 +9,7 @@ function Login()
     const navigate=useNavigate();
     const [info,setinfo]=useState("");
     const [einfo,seteinfo]=useState([]);
-    const[error,seterror]=useState({});
+    const[,seterror]=useState({});
     
     useEffect(()=>{
         axios.get("http://localhost:3400/employee")
@@ -20,11 +20,12 @@ function Login()
     },[])
 
     const  LoginCheck=()=>{
+         if (!validations()) return;
         if(uname==="Admin" && pwd==="admin@123")
             navigate('/empdata');
         else
         {
-            einfo.map((einfo)=>{
+            einfo.forEach((einfo)=>{
                 if(einfo.email===uname && einfo.pswd===pwd)
                 {
                     navigate('/show/'+ einfo.id)
