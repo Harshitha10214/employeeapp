@@ -15,7 +15,7 @@ function Showemp()
             console.log(res.data);
             seteinfo(res.data);
         });
-    },[]);
+    },[id]);
     return(
         <div>
             <h1 style={{textAlign:"center"}}>Employee Information</h1>

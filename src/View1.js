@@ -13,7 +13,7 @@ function View1()
             console.log(res.data);
             seteinfo(res.data);
         });
-    },[]);
+    },[id]);
     return(
         <div>
             <h1 style={{textAlign:"center"}}>View employee Information</h1>

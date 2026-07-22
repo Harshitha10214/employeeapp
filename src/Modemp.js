@@ -14,7 +14,7 @@ function Modemp()
             console.log(res.data);
             seteinfo(res.data);
         });
-    },[]);
+    },[id]);
 
     const Updateemp=()=>{
         axios.put("http://localhost:3400/employee/"+id,einfo)
